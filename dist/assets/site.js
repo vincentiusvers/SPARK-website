@@ -65,7 +65,6 @@ function renderFooter() {
           <div><strong>Co-funded by the European Union</strong><p>This project has received funding from the European Union's Horizon Europe research and innovation programme under Grant Agreement XXX.</p></div>
         </div>
       </div>
-      <div class="photo-credit">Photography: <a href="https://commons.wikimedia.org/wiki/File:Skagen_harbour.jpg">Poul-Werner Dam / CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Off-shore_Wind_Farm_Turbine.jpg">Phil Hollman / CC BY 2.0</a>, and <a href="https://commons.wikimedia.org/wiki/File:Valletta_Grand_Harbour_from_Valletta.jpg">Hunor Peter / CC0</a>. Images have been cropped for presentation.</div>
     </footer>`;
 }
 
