@@ -10,30 +10,33 @@ const partners = [
 ];
 
 const navItems = [
-  ["Home", "/"],
-  ["About", "/about/"],
-  ["Consortium", "/consortium/"],
-  ["News & Events", "/news-events/"],
-  ["Contact", "/contact/"],
+  ["Home", ""],
+  ["About", "about/"],
+  ["Consortium", "consortium/"],
+  ["News & Events", "news-events/"],
+  ["Contact", "contact/"],
 ];
 
 function currentPath() {
-  const path = window.location.pathname.replace(/index\.html$/, "");
+  const basePath = new URL(document.baseURI).pathname;
+  const path = window.location.pathname.replace(basePath, "").replace(/index\.html$/, "");
   return path.endsWith("/") ? path : `${path}/`;
 }
 
 function isCurrent(path, href) {
-  return href === "/" ? path === "/" : path.startsWith(href);
+  return href === "" ? path === "/" || path === "" : path.startsWith(href);
 }
 
 function renderHeader() {
+  const skipLink = document.querySelector(".skip-link");
+  if (skipLink) skipLink.href = `${window.location.pathname}#content`;
   const target = document.querySelector("[data-site-header]");
   if (!target) return;
   const path = currentPath();
   target.innerHTML = `
     <header class="site-header">
-      <a class="brand" href="/" aria-label="SPARK home">
-        <img src="/assets/spark white.svg" alt="SPARK">
+      <a class="brand" href="" aria-label="SPARK home">
+        <img src="assets/spark white.svg" alt="SPARK">
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
         <span></span><span></span><span></span>
@@ -59,9 +62,9 @@ function renderFooter() {
   target.innerHTML = `
     <footer class="site-footer">
       <div class="footer-inner">
-        <a class="footer-brand" href="/" aria-label="SPARK home"><img src="/assets/spark white.svg" alt="SPARK"></a>
+        <a class="footer-brand" href="" aria-label="SPARK home"><img src="assets/spark white.svg" alt="SPARK"></a>
         <div class="funding">
-          <img src="/assets/eu-flag.svg" alt="European Union flag">
+          <img src="assets/eu-flag.svg" alt="European Union flag">
           <div><strong>Co-funded by the European Union</strong><p>This project has received funding from the European Union's Horizon Europe research and innovation programme under Grant Agreement XXX.</p></div>
         </div>
       </div>
