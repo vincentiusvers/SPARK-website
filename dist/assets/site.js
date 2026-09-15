@@ -9,6 +9,10 @@ const partners = [
   ["University College London", "UCL.svg", "https://www.ucl.ac.uk/"],
 ];
 
+const siteRoot = window.location.hostname.endsWith("github.io") || window.location.pathname.startsWith("/SPARK-website/")
+  ? "/SPARK-website/"
+  : "/";
+
 const navItems = [
   ["Home", ""],
   ["About", "about/"],
@@ -18,8 +22,7 @@ const navItems = [
 ];
 
 function currentPath() {
-  const basePath = new URL(document.baseURI).pathname;
-  const path = window.location.pathname.replace(basePath, "").replace(/index\.html$/, "");
+  const path = window.location.pathname.replace(siteRoot, "").replace(/index\.html$/, "");
   return path.endsWith("/") ? path : `${path}/`;
 }
 
@@ -35,14 +38,14 @@ function renderHeader() {
   const path = currentPath();
   target.innerHTML = `
     <header class="site-header">
-      <a class="brand" href="" aria-label="SPARK home">
-        <img src="assets/spark white.svg" alt="SPARK">
+      <a class="brand" href="${siteRoot}" aria-label="SPARK home">
+        <img src="${siteRoot}assets/spark white.svg" alt="SPARK">
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
         <span></span><span></span><span></span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-        ${navItems.map(([label, href]) => `<a href="${href}"${isCurrent(path, href) ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
+        ${navItems.map(([label, href]) => `<a href="${siteRoot}${href}"${isCurrent(path, href) ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
       </nav>
     </header>`;
 
@@ -62,9 +65,9 @@ function renderFooter() {
   target.innerHTML = `
     <footer class="site-footer">
       <div class="footer-inner">
-        <a class="footer-brand" href="" aria-label="SPARK home"><img src="assets/spark white.svg" alt="SPARK"></a>
+        <a class="footer-brand" href="${siteRoot}" aria-label="SPARK home"><img src="${siteRoot}assets/spark white.svg" alt="SPARK"></a>
         <div class="funding">
-          <img src="assets/eu-flag.svg" alt="European Union flag">
+          <img src="${siteRoot}assets/eu-flag.svg" alt="European Union flag">
           <div><strong>Co-funded by the European Union</strong><p>This project has received funding from the European Union's Horizon Europe research and innovation programme under Grant Agreement XXX.</p></div>
         </div>
       </div>
