@@ -4,7 +4,7 @@ const partners = [
   ["DNV", "DNV.svg", "https://www.dnv.co.uk/"],
   ["Maersk", "MAERSK.svg", "https://www.maersk.com/"],
   ["MARIN", "MARIN.svg", "https://www.marin.nl/en"],
-  ["Port of Malta", "MALTA.svg", "https://maltafreeport.com.mt/"],
+  ["Transport Malta", "MALTA.svg", "https://www.transport.gov.mt/"],
   ["Port of Skagen", "SKAGEN.svg", "https://portofskagen.com/en/port-of-scandinavia"],
   ["University College London", "UCL.svg", "https://www.ucl.ac.uk/"],
 ];
