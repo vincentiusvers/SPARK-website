@@ -39,7 +39,7 @@ function renderHeader() {
   target.innerHTML = `
     <header class="site-header">
       <a class="brand" href="${siteRoot}" aria-label="SPARK home">
-        <img src="${siteRoot}assets/spark white.svg" alt="SPARK">
+        <img src="${siteRoot}assets/spark-full-color.png" alt="SPARK">
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
         <span></span><span></span><span></span>
@@ -65,10 +65,13 @@ function renderFooter() {
   target.innerHTML = `
     <footer class="site-footer">
       <div class="footer-inner">
-        <a class="footer-brand" href="${siteRoot}" aria-label="SPARK home"><img src="${siteRoot}assets/spark white.svg" alt="SPARK"></a>
+        <a class="footer-brand" href="${siteRoot}" aria-label="SPARK home"><img src="${siteRoot}assets/spark-white.svg" alt="SPARK"></a>
         <div class="funding">
-          <img src="${siteRoot}assets/eu-flag.svg" alt="European Union flag">
-          <div><strong>Co-funded by the European Union</strong><p>This project has received funding from the European Union's Horizon Europe research and innovation programme under Grant Agreement XXX.</p></div>
+          <img src="${siteRoot}assets/eu-funded-horizontal.png" alt="Funded by the European Union">
+          <div class="funding-copy">
+            <p class="grant-statement">This project has received funding from the European Union&rsquo;s Horizon Europe research and innovation programme under grant agreement No. 101270520.</p>
+            <p>Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union. Neither the European Union nor the granting authority can be held responsible for them.</p>
+          </div>
         </div>
       </div>
     </footer>`;

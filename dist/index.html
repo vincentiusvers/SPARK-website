@@ -18,8 +18,20 @@
         <h1><span>Offshore</span><span class="aqua">power for</span><span>vessels</span></h1>
         <a class="button-link" href="about/">Learn more</a>
       </div>
-      <div class="hero-visual" aria-label="Skagen harbour viewed from above">
-        <img src="assets/skagen-harbour.png" alt="Ships and harbour infrastructure at Skagen, Denmark">
+      <div class="hero-visual" aria-label="Ships and harbour infrastructure at Skagen, Denmark">
+        <svg class="hero-mask-art" viewBox="0 0 760 740" role="img" aria-labelledby="hero-image-title" preserveAspectRatio="xMidYMid slice">
+          <title id="hero-image-title">Ships and harbour infrastructure at Skagen, Denmark</title>
+          <defs>
+            <clipPath id="spark-hero-mask">
+              <circle class="hero-mask-core" cx="180" cy="350" r="112" />
+              <polygon class="hero-ray hero-ray-1" points="128,286 230,306 360,66 245,34" />
+              <polygon class="hero-ray hero-ray-2" points="214,292 240,390 746,198 684,62" />
+              <polygon class="hero-ray hero-ray-3" points="222,366 206,452 650,690 744,560" />
+              <polygon class="hero-ray hero-ray-4" points="224,410 126,428 286,700 418,644" />
+            </clipPath>
+          </defs>
+          <image href="assets/skagen-harbour.png" width="760" height="740" preserveAspectRatio="xMidYMid slice" clip-path="url(#spark-hero-mask)" />
+        </svg>
       </div>
     </section>
 
