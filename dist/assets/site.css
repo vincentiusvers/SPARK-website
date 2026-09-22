@@ -225,7 +225,7 @@ button { font: inherit; }
   .section { padding: 76px 0; }
   .page-title { padding-top: 58px; font-size: 2.8rem; }
   .hero h1 { font-size: clamp(2.85rem, 14vw, 4.6rem); }
-  .hero-visual { min-height: 0; height: 430px; width: 112%; margin-left: -6%; }
+  .hero-visual { min-height: 0; height: 430px; width: 100%; margin-left: 0; }
   .facts-band::before { top: 57%; height: 72%; }
   .facts { grid-template-columns: 1fr; transform: translateY(22px); }
   .fact, .fact:nth-child(2), .fact:last-child { border: 0; }
