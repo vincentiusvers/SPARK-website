@@ -98,11 +98,11 @@ button { font: inherit; }
 @keyframes sparkRayReveal { to { transform: scale(1); } }
 
 .facts-band { position: relative; background: #fff; overflow: visible; }
-.facts-band::before { content: ""; position: absolute; right: 0; top: 50%; width: 70%; height: 205px; background: var(--navy); transform: translateY(-50%); }
+.facts-band::before { content: ""; position: absolute; right: 0; top: 50%; width: calc(70% - 36px); height: 205px; background: var(--navy); transform: translateY(-50%); }
 .facts-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(250px,.48fr) minmax(0,1.52fr); gap: clamp(54px,6vw,88px); align-items: center; }
 .facts-title { margin: 0; font-size: var(--heading-size); line-height: 1.08; font-weight: 600; }
 .facts-title span { color: var(--aqua); }
-.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; transform: translateY(68px); }
+.facts { width: calc(100% - 36px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; transform: translate(36px, 68px); }
 .fact { min-height: 280px; padding: 34px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: #fff; box-shadow: 0 12px 30px rgba(7,44,51,.12); }
 .fact-icon { width: 86px; height: 86px; margin-bottom: 22px; filter: brightness(0) saturate(100%) invert(26%) sepia(30%) saturate(1729%) hue-rotate(158deg) brightness(89%) contrast(88%); }
 .fact strong { color: var(--cyan); font-size: clamp(1.8rem, 2.2vw, 2.35rem); line-height: 1.08; font-weight: 700; }
@@ -204,7 +204,7 @@ button { font: inherit; }
   .facts-band::before { width: 100%; top: 57%; height: 205px; }
   .facts-layout { grid-template-columns: 1fr; }
   .facts-title { text-align: center; }
-  .facts { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .facts { width: 100%; grid-template-columns: repeat(3, 1fr); gap: 12px; transform: translateY(68px); }
   .fact, .fact:last-child { border: 0; min-height: 250px; }
   .split { grid-template-columns: 1fr; gap: 46px; }
   .split.reverse .media-shape { order: 0; }
