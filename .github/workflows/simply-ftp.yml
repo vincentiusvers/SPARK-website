@@ -2,7 +2,7 @@ name: Deploy website to Simply
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - "dist/**"
       - ".github/workflows/simply-ftp.yml"
