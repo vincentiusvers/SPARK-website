@@ -135,6 +135,30 @@ button { font: inherit; }
 .carousel-button svg { width: 23px; height: 23px; }
 .carousel-button.previous { left: 0; }
 .carousel-button.next { right: 0; }
+/* Partner carousel (home page and articles): plain arrowheads outside the logo boxes,
+   logo boxes grow a little and the logo inside to 145% on hover,
+   "All partners" is hidden until hover, its link spans the full width, text sits under the last logo box */
+.partner-carousel { margin: 52px 0 36px; padding: 0 72px; }
+.carousel-viewport { padding: 18px 0; margin: -18px 0; }
+.carousel-slide a { position: relative; transition: transform .35s ease, box-shadow .35s ease; }
+.carousel-slide a:hover, .carousel-slide a:focus-visible { z-index: 1; transform: scale(1.08); box-shadow: 0 14px 32px rgba(0,0,0,.3); }
+.carousel-slide a:hover img, .carousel-slide a:focus-visible img { transform: scale(1.45); }
+.carousel-button { width: 52px; height: 52px; border: 0; background: none; color: #fff; transition: color .25s, transform .25s; }
+.carousel-button:hover, .carousel-button:focus-visible { color: var(--cyan); background: none; }
+.carousel-button.previous:hover, .carousel-button.previous:focus-visible { transform: translateY(-50%) translateX(-4px); }
+.carousel-button.next:hover, .carousel-button.next:focus-visible { transform: translateY(-50%) translateX(4px); }
+.carousel-button svg { width: 36px; height: 36px; }
+.partner-preview .button-link { display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 65px; align-items: center; width: 100%; min-height: 64px; padding: 0 72px; border-color: transparent; color: transparent; }
+.partner-preview .button-link span { grid-column: -2; justify-self: center; }
+.partner-preview .button-link:hover, .partner-preview .button-link:focus-visible { color: #fff; background: none; border-color: transparent; transform: none; }
+@media (max-width: 980px) {
+  .partner-preview .button-link { grid-template-columns: repeat(3, 1fr); column-gap: 36px; }
+}
+@media (max-width: 600px) {
+  .partner-carousel { margin-left: 0; margin-right: 0; padding: 0 54px; }
+  .carousel-button svg { width: 30px; height: 30px; }
+  .partner-preview .button-link { grid-template-columns: repeat(2, 1fr); column-gap: 18px; padding: 0 54px; }
+}
 
 .consortium-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 42px 32px; padding-bottom: 110px; }
 .partner-card { min-height: 230px; padding: 28px; display: grid; place-items: center; color: var(--ink); background: #fff; text-decoration: none; text-align: center; }
@@ -232,7 +256,7 @@ button { font: inherit; }
   .objective-grid { padding: 22px; margin-left: -12px; margin-right: -12px; }
   .media-shape, .media-shape img { min-height: 330px; }
   .shape-pill-left, .shape-pill-left img, .shape-pill-right, .shape-pill-right img { border-radius: 0; }
-  .partner-carousel { margin-left: -18px; margin-right: -18px; padding: 0 18px; }
+  .partner-carousel { margin-left: 0; margin-right: 0; padding: 0 54px; }
   .carousel-track { gap: 18px; }
   .carousel-slide { flex-basis: calc((100% - 18px) / 2); }
   .carousel-slide a { height: 108px; padding: 16px; }
